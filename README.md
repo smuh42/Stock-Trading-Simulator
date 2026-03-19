@@ -2,7 +2,7 @@
 OOP-based stock trading simulator for semester project
 
 ## 📌 Project Overview
-The **Stock Trading Simulator** is a C++ based Object Oriented Programming (OOP) project developed for IBA Karachi.
+The **Stock Trading Simulator** is a C++ based Object Oriented Programming (OOP) project developed.
 
 This system simulates a basic stock trading environment where users can:
 - place buy and sell orders
@@ -10,8 +10,6 @@ This system simulates a basic stock trading environment where users can:
 - track executed trades
 - manage a portfolio
 - undo the most recent trade
-
-This is a **Milestone 2 prototype**, focusing on system design and core functionality.
 
 ---
 
@@ -104,11 +102,3 @@ Displays:
 - Reverses last trade  
 - Restores portfolio  
 - Restores orders  
-
----
-
-## 🖥️ How to Run
-
-### Compile
-```bash
-g++ main.cpp -o trading
