@@ -2,6 +2,7 @@
 #define EXCEPTIONS_H
 
 #include <stdexcept>
+#include <string>
 using namespace std;
 
 class TradingException : public runtime_error {
@@ -11,17 +12,20 @@ public:
 
 class InsufficientFundsException : public TradingException {
 public:
-    InsufficientFundsException() : TradingException("Insufficient funds for this purchase.") {}
+    InsufficientFundsException()
+        : TradingException("Insufficient funds to complete purchase.") {}
 };
 
 class InvalidQuantityException : public TradingException {
 public:
-    InvalidQuantityException() : TradingException("Quantity must be a positive number.") {}
+    InvalidQuantityException()
+        : TradingException("Invalid quantity entered.") {}
 };
 
-class EmptyUndoStackException : public TradingException {
+class InsufficientSharesException : public TradingException {
 public:
-    EmptyUndoStackException() : TradingException("No trade available to undo.") {}
+    InsufficientSharesException()
+        : TradingException("Not enough shares available to sell.") {}
 };
 
 #endif
