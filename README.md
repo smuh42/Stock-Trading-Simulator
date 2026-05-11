@@ -124,3 +124,17 @@ Trade history is automatically saved into:
 
 ```text
 records/trade_history.csv
+
+## Build
+
+```bash
+g++ src/*.cpp -Iinclude -o StockTradingSimulator.exe -lraylib -lopengl32 -lgdi32 -lwinmm
+```
+
+
+## Run
+
+```bash
+StockTradingSimulator.exe
+```
+
