@@ -1,104 +1,126 @@
-# 📈 Stock Trading Simulator
-OOP-based stock trading simulator for semester project
+# 📈 PSX Stock Trading Simulator
 
-## 📌 Project Overview
-The **Stock Trading Simulator** is a C++ based Object Oriented Programming (OOP) project developed.
+GUI-based PSX stock trading simulator developed in C++ using Object Oriented Programming (OOP) concepts and the Raylib graphics library.
 
-This system simulates a basic stock trading environment where users can:
-- place buy and sell orders
-- match orders automatically
-- track executed trades
+---
+
+# 📌 Project Overview
+
+The **PSX Stock Trading Simulator** is a desktop-based stock market simulation system developed as an OOP semester project.
+
+The simulator creates a simplified Pakistan Stock Exchange (PSX) trading environment where users can:
+
+- view stock market data from CSV files
+- buy shares
 - manage a portfolio
-- undo the most recent trade
+- track recent trades
+- undo previous transactions
+- sort stocks by volume
+- view top market advancers
+- interact through a graphical user interface (GUI)
+
+The project demonstrates practical implementation of:
+- OOP concepts
+- STL data structures
+- algorithms
+- file handling
+- exception handling
+- GUI development
 
 ---
 
-## 🎯 Features Implemented
+# 🎯 Features Implemented
 
-- User Buy Order Placement  
-- User Sell Order Placement  
-- Market Buy/Sell Liquidity  
-- Automatic Order Matching  
-- Trade Execution & Recording  
-- Trade History Display  
-- Trading Session Summary  
-- Portfolio Management  
-- Undo Last Trade  
-- Exception Handling  
-- Menu-driven Console Interface  
-
----
-
-## 🧠 OOP Concepts Used
-
-- Encapsulation  
-- Inheritance  
-- Polymorphism  
-- Abstraction  
-- Exception Handling  
+- GUI-based Interface using Raylib
+- CSV Stock Market Data Loading
+- Scrollable Stock List
+- Selected Stock Details Panel
+- Portfolio Management
+- Buy Stock Functionality
+- Undo Last Buy
+- Recent Trade History
+- Trade History CSV Export
+- Top Advancers Section
+- Merge Sort by Volume
+- Quantity Input Handling
+- Dynamic GUI Updates
+- Exception Handling
 
 ---
 
-## 🧱 System Architecture
+# 🧠 OOP Concepts Used
 
-Main Classes:
-
-- `Order` (Abstract Base Class)  
-- `BuyOrder` (Derived)  
-- `SellOrder` (Derived)  
-- `Portfolio`  
-- `TradeRecord`  
-- `UndoRecord`  
-- `TradingSystem`  
+- Encapsulation
+- Inheritance
+- Polymorphism
+- Abstraction
+- Composition
+- Exception Handling
 
 ---
 
-## ⚙️ Data Structures Used
+# 🧱 Main Classes
 
-- `priority_queue` → order matching  
-- `vector` → trade history  
-- `stack` → undo functionality  
-
----
-
-## ⚠️ Validation & Exceptions
-
-- Buy rejected if insufficient cash  
-- Sell rejected if insufficient shares  
-- Custom exceptions handle errors  
+- `MarketAsset` (Abstract Base Class)
+- `Stock`
+- `Portfolio`
+- `TradeRecord`
+- `TradingSystem`
+- `GUIManager`
+- `CSVLoader`
+- `TradingException`
 
 ---
 
-## 📊 Trade Tracking
+# ⚙️ Data Structures Used
 
-Each trade stores:
-- timestamp  
-- buy order ID  
-- sell order ID  
-- price  
-- quantity  
-
-System calculates:
-- total trading volume  
-- average price  
-- number of trades  
+| Data Structure | Purpose |
+|---|---|
+| `vector` | Stock storage and trade history |
+| `stack` | Undo functionality |
+| `priority_queue` | Top advancers |
+| `map` | Portfolio holdings and investments |
 
 ---
 
-## 💼 Portfolio Management
+# 🖥️ GUI Components
 
-Displays:
-- cash balance  
-- reserved cash  
-- shares owned  
-- reserved shares  
-- total equity  
-- profit/loss  
+The simulator interface includes:
+
+- Stock List Panel
+- Stock Details Panel
+- Portfolio Section
+- Recent Trades Section
+- Top Advancers Section
+- Quantity Input Box
+- Buy Button
+- Undo Button
+- High Volume Sorting Button
+- Status Message Bar
 
 ---
 
-## 🔄 Undo Functionality
+# 📊 Stock Data Displayed
 
-- Reverses last trade  
-- Restores portfolio  
-- Restores orders  
+Each stock displays:
+
+- Symbol
+- LDCP
+- Open Price
+- High Price
+- Low Price
+- Close Price
+- Change
+- Change Percentage
+- Volume
+
+---
+
+# 📂 CSV File Handling
+
+Stock market data is loaded from CSV files using the `CSVLoader` class.
+
+Trade history is automatically saved into:
+
+```text
+records/trade_history.csv
