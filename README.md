@@ -12,9 +12,9 @@ The simulator creates a simplified Pakistan Stock Exchange (PSX) trading environ
 
 - view stock market data from CSV files
 - buy shares
+- sell shares
 - manage a portfolio
 - track recent trades
-- undo previous transactions
 - sort stocks by volume
 - view top market advancers
 - interact through a graphical user interface (GUI)
@@ -37,7 +37,7 @@ The project demonstrates practical implementation of:
 - Selected Stock Details Panel
 - Portfolio Management
 - Buy Stock Functionality
-- Undo Last Buy
+- Sell Stock Functionality
 - Recent Trade History
 - Trade History CSV Export
 - Top Advancers Section
@@ -72,14 +72,18 @@ The project demonstrates practical implementation of:
 
 ---
 
-# ⚙️ Data Structures Used
+# ⚙️ Data Structures & Algorithms Used
 
-| Data Structure | Purpose |
-|---|---|
-| `vector` | Stock storage and trade history |
-| `stack` | Undo functionality |
-| `priority_queue` | Top advancers |
-| `map` | Portfolio holdings and investments |
+| Data Structure / Algorithm | Used In | Purpose |
+|---|---|---|
+| `vector<Stock>` | `TradingSystem::stocks` | Stores all stock market data |
+| `vector<TradeRecord>` | `TradingSystem::tradeHistory` | Stores recent trade history |
+| `priority_queue<Stock>` | `TradingSystem::topGainers` | Displays top market advancers |
+| `map<string,int>` | `Portfolio::holdings` | Stores shares owned by user |
+| `map<string,double>` | `Portfolio::investedAmount` | Stores invested amount per stock |
+| `Merge Sort` | `mergeSortByVolume()` | Sorts stocks by trading volume |
+| `File Handling` | `appendTradeToFile()` | Saves trade history into CSV |
+| `stringstream` | `TradeRecord::toCSV()` | Converts trade object into CSV format |
 
 ---
 
@@ -94,7 +98,7 @@ The simulator interface includes:
 - Top Advancers Section
 - Quantity Input Box
 - Buy Button
-- Undo Button
+- Sell Button
 - High Volume Sorting Button
 - Status Message Bar
 
@@ -124,12 +128,3 @@ Trade history is automatically saved into:
 
 ```text
 records/trade_history.csv
-```
-
-# How to Run
-
-```bash
-g++ src/*.cpp -Iinclude -o StockTradingSimulator.exe -lraylib -lopengl32 -lgdi32 -lwinmm
-StockTradingSimulator.exe
-
-
